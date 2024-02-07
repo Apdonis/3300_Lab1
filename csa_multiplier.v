@@ -24,7 +24,6 @@ module csa_multiplier
 #(parameter n=4)
 (   
     input [3:0] m,q, 
-    input cin,
     output [7:0] sum,
     output cout
     );
@@ -33,7 +32,7 @@ module csa_multiplier
     wire  fasum1, fasum2,fasum3,fasum5,fasum6,fasum7;
     
     
-    mq_4bit mq0 (.m(m[3:1]), .q(q[0]), .mq(sum0[3:0]));
+    mq_4bit mq0 (.m(m[3:0]), .q(q[0]), .mq(sum0[3:0]));
     mq_4bit mq1 (.m(m[3:0]), .q(q[1]), .mq(sum1[3:0]));
     mq_4bit mq2 (.m(m[3:0]), .q(q[2]), .mq(sum2[3:0]));
     mq_4bit mq3 (.m(m[3:0]), .q(q[3]), .mq(sum3[3:0]));
